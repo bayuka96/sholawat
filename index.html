@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background with Navigation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay loop muted>
+        <source src="123.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="box" onclick="navigateToFrame(1)">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+        <div class="box" onclick="navigateToFrame(2)">
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+        <div class="box" onclick="navigateToFrame(3)">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <div class="box" onclick="navigateToFrame(4)">
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+        <div class="box" onclick="navigateToFrame(5)">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+        <div class="box" onclick="navigateToFrame(6)">
+            <img src="image6.jpg" alt="Image 6">
+        </div>
+        <div class="box" onclick="navigateToFrame(7)">
+            <img src="image7.jpg" alt="Image 7">
+        </div>
+        <div class="box" onclick="navigateToFrame(8)">
+            <img src="image8.jpg" alt="Image 8">
+        </div>
+    </div>
+
+    <!-- Frame Pages -->
+    <div id="frame-1" class="frame-page">
+        <iframe src="document1.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-2" class="frame-page">
+        <iframe src="document2.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-3" class="frame-page">
+        <iframe src="document3.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-4" class="frame-page">
+        <iframe src="document4.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-5" class="frame-page">
+        <iframe src="document5.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-6" class="frame-page">
+        <iframe src="document6.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-7" class="frame-page">
+        <iframe src="document7.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+    <div id="frame-8" class="frame-page">
+        <iframe src="document8.pdf"></iframe>
+        <button class="back-button" onclick="goBack()">Kembali ke Halaman 1</button>
+    </div>
+
+    <script>
+        function navigateToFrame(frameNumber) {
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById(`frame-${frameNumber}`).style.display = 'flex';
+        }
+
+        function goBack() {
+            document.querySelectorAll('.frame-page').forEach(frame => frame.style.display = 'none');
+            document.querySelector('.container').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
